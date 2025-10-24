@@ -3,8 +3,9 @@ package api_todo_v1
 import (
 	todoV1 "api/go-sdk/todo/v1"
 	"context"
-	"github.com/gofrs/uuid/v5"
 	todogendb "platform/backend/internal/domain/todo/gendb"
+
+	"github.com/gofrs/uuid/v5"
 
 	"connectrpc.com/connect"
 	"github.com/rs/zerolog/log"

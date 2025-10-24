@@ -11,6 +11,7 @@ type dependencies struct {
 
 func setupDependencies(_ config.Config, conn *connections) (*dependencies, error) {
 	todoStore := todogendb.New(conn.db)
+
 	return &dependencies{
 		todoStore: todoStore,
 	}, nil

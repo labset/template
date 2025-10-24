@@ -2,9 +2,10 @@ package api_todo_v1
 
 import (
 	"api/go-sdk/todo/v1/todoV1connect"
-	"github.com/gin-gonic/gin"
 	"net/http"
 	todogendb "platform/backend/internal/domain/todo/gendb"
+
+	"github.com/gin-gonic/gin"
 )
 
 type Dependencies struct {

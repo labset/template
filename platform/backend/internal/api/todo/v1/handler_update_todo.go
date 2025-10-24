@@ -6,8 +6,9 @@ import (
 	"database/sql"
 	"errors"
 	"fmt"
-	"github.com/gofrs/uuid/v5"
 	todogendb "platform/backend/internal/domain/todo/gendb"
+
+	"github.com/gofrs/uuid/v5"
 
 	"connectrpc.com/connect"
 )

@@ -2,16 +2,16 @@ package api_todo_v1
 
 import (
 	todoV1 "api/go-sdk/todo/v1"
+	"database/sql"
 	"errors"
 	"fmt"
 	todogendb "platform/backend/internal/domain/todo/gendb"
 
 	"connectrpc.com/connect"
-	"gorm.io/gorm"
 )
 
 func dbErrorToAPI(err error, msg string) *connect.Error {
-	if errors.Is(err, gorm.ErrRecordNotFound) {
+	if errors.Is(err, sql.ErrNoRows) {
 		return connect.NewError(connect.CodeNotFound, err)
 	}
 
