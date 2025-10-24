@@ -8,7 +8,7 @@ import (
 
 func main() {
 	rootCmd := &cobra.Command{
-		Use: "clarity",
+		Use: "template-cli",
 	}
 
 	rootCmd.AddCommand(DbSchemaRollbackCmd())

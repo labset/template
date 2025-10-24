@@ -12,7 +12,7 @@ import (
 )
 
 const (
-	SessionName   = "labset.clarity"
+	SessionName   = "labset.template.session"
 	SessionMaxAge = 600 // 10 minutes in seconds
 )
 
