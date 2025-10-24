@@ -12,38 +12,39 @@ A full-stack application template featuring a React frontend, Go backend, and gR
 
 ### Getting Started
 
-1. **Clone and install dependencies:**
-   ```bash
-   npm install
-   ```
+- Clone and install dependencies
+  ```bash
+  npm install
+  ```
+- Code generation
 
-2. **Start the infrastructure (PostgreSQL):**
-   ```bash
-   npm run harness start
-   ```
+  ```bash
+  npm run schema codegen
+  npm run backend codegen
+  ```
 
-3. **Run database migrations:**
-   ```bash
-   npm run backend cli db-schema-migrate
-   ```
+- Build dependencies
 
-4. **Start the backend server:**
-   ```bash
-   npm run backend start
-   ```
-   The backend will be available at `http://localhost:8080` (or configured port)
+  ```bash
+  npm run build
+  ```
 
-5. **In a new terminal, start the frontend:**
-   ```bash
-   npm run frontend start
-   ```
-   The frontend will be available at `http://localhost:5173`
+- Start the development services:
 
-### Stopping Services
+  ```bash
+  # Terminal 1: Start Docker services (PostgreSQL)
+  npm run harness start
 
-```bash
-npm run harness stop    # Stop Docker infrastructure
-```
+  # Terminal 2: Start backend with live reload
+  npm run backend start
+
+  # Terminal 3: Start frontend dev server
+  npm run frontend start
+  ```
+
+- Access the application:
+  - Frontend: http://localhost:5173
+  - Backend API: http://localhost:8080
 
 ## Project Structure
 
@@ -100,6 +101,7 @@ npm run backend cli db-schema-rollback   # Rollback last migration
 ## Technology Stack
 
 ### Backend
+
 - **Language:** Go 1.25
 - **Framework:** Gin
 - **Database:** PostgreSQL 17
@@ -107,6 +109,7 @@ npm run backend cli db-schema-rollback   # Rollback last migration
 - **API:** Connect RPC (gRPC-compatible)
 
 ### Frontend
+
 - **Framework:** React 19
 - **Build Tool:** Vite 7
 - **UI Library:** Mantine 8
@@ -115,6 +118,7 @@ npm run backend cli db-schema-rollback   # Rollback last migration
 - **API Client:** Connect Web
 
 ### API & Code Generation
+
 - **Schema:** Protocol Buffers (Protobuf)
 - **Tooling:** Buf
 - **Protocol:** Connect RPC
@@ -122,6 +126,7 @@ npm run backend cli db-schema-rollback   # Rollback last migration
 ## Environment Configuration
 
 Create a `.env` file in `platform/backend/` based on your environment needs. The backend expects configuration for:
+
 - Environment name
 - Server settings (host, port)
 - Database connection
@@ -131,6 +136,7 @@ Create a `.env` file in `platform/backend/` based on your environment needs. The
 ## Available Scripts
 
 ### Root Level
+
 - `npm run harness` - Manage Docker infrastructure
 - `npm run schema` - Manage Protobuf schemas
 - `npm run backend` - Manage backend service
@@ -141,6 +147,7 @@ Create a `.env` file in `platform/backend/` based on your environment needs. The
 - `npm run format` - Format code with Prettier
 
 ### Backend Specific
+
 - `npm run backend start` - Start with hot-reload
 - `npm run backend debug` - Start in debug mode
 - `npm run backend cli` - Run CLI commands
@@ -148,10 +155,7 @@ Create a `.env` file in `platform/backend/` based on your environment needs. The
 - `npm run backend test:all` - Run all test types
 
 ### Frontend Specific
+
 - `npm run frontend start` - Start dev server
 - `npm run frontend build` - Build for production
 - `npm run frontend preview` - Preview production build
-
-## License
-
-This project is private.

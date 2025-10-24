@@ -5,6 +5,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 ## Project Overview
 
 This is a monorepo template for building full-stack applications with:
+
 - **Frontend**: React + TypeScript + Vite + Mantine UI
 - **Backend**: Go + Gin + PostgreSQL
 - **API**: gRPC/Connect protocol with Protobuf schemas
@@ -15,6 +16,7 @@ The project uses npm workspaces for JavaScript/TypeScript projects and Go worksp
 ## Development Commands
 
 ### Installation & Setup
+
 ```bash
 npm install                    # Install all workspace dependencies
 npm run harness start          # Start Docker infrastructure (PostgreSQL)
@@ -22,12 +24,14 @@ npm run backend cli db-schema-migrate  # Run database migrations
 ```
 
 ### Code Generation
+
 ```bash
 npm run schema codegen         # Generate API clients from Protobuf schemas
 npm run backend codegen        # Generate Go code (if applicable)
 ```
 
 ### Running Applications
+
 ```bash
 npm run backend start          # Start backend server with hot-reload (uses modd)
 npm run backend debug          # Start backend in debug mode
@@ -35,6 +39,7 @@ npm run frontend start         # Start frontend dev server (Vite)
 ```
 
 ### Testing
+
 ```bash
 npm test                       # Run all tests across workspaces
 npm run test:coverage          # Run tests with coverage
@@ -45,6 +50,7 @@ npm run backend test:all       # Run all backend tests (unit + integration + e2e
 ```
 
 ### Linting & Formatting
+
 ```bash
 npm run lint                   # Lint all workspaces
 npm run backend lint:fix       # Auto-fix backend linting issues
@@ -53,11 +59,13 @@ npm run format:check           # Check formatting without making changes
 ```
 
 ### Building
+
 ```bash
 npm run build                  # Build all workspaces
 ```
 
 ### Database Operations
+
 ```bash
 npm run backend cli db-schema-migrate   # Apply database migrations
 npm run backend cli db-schema-rollback  # Rollback last migration
@@ -99,6 +107,7 @@ npm run backend cli db-schema-rollback  # Rollback last migration
 ### Key Technologies
 
 **Backend:**
+
 - Framework: Gin (HTTP router)
 - Database: PostgreSQL with lib/pq driver
 - Migrations: Goose (pressly/goose/v3)
@@ -107,6 +116,7 @@ npm run backend cli db-schema-rollback  # Rollback last migration
 - Linting: golangci-lint
 
 **Frontend:**
+
 - Framework: React 19
 - Build Tool: Vite 7
 - UI Library: Mantine 8
@@ -116,6 +126,7 @@ npm run backend cli db-schema-rollback  # Rollback last migration
 - Linting: ESLint 9
 
 **Schema & Code Generation:**
+
 - Protobuf with Buf
 - Generates both Go (Connect RPC) and TypeScript (Bufbuild ES) clients
 
@@ -139,6 +150,7 @@ The frontend and backend communicate via Connect RPC, which is compatible with g
 4. Start frontend: `npm run frontend start` (Vite dev server with HMR)
 
 When modifying Protobuf schemas:
+
 1. Edit files in `_schema/protos/`
 2. Run `npm run schema codegen` to regenerate API clients
 3. Restart backend and frontend to pick up new types
@@ -146,6 +158,7 @@ When modifying Protobuf schemas:
 ### Configuration
 
 Backend configuration is managed through environment variables (loaded from `.env` file):
+
 - Environment name
 - Server settings (host, port)
 - Database connection (PostgreSQL)

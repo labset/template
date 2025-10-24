@@ -39,13 +39,13 @@ linters:
     allow-whole-block: false
     branch-max-lines: 2
     depguard:
-        main:
-          allow:
-            - $gostd
-            - connectrpc.com/connect
-            - connectrpc.com/cors
-            - github.com/gin-contrib/cors
-            - github.com/gin-contrib/sessions
-            - github.com/gin-gonic/gin
-            - github.com/gofrs/uuid/v5
-            - github.com/joho/godotenv
+      main:
+        allow:
+          - $gostd
+          - connectrpc.com/connect
+          - connectrpc.com/cors
+          - github.com/gin-contrib/cors
+          - github.com/gin-contrib/sessions
+          - github.com/gin-gonic/gin
+          - github.com/gofrs/uuid/v5
+          - github.com/joho/godotenv
