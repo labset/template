@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"platform/backend/config"
+	apitodov1 "platform/backend/internal/api/todo/v1"
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-contrib/sessions"
@@ -46,6 +47,10 @@ func setupRouter(cfg config.Config, deps *dependencies) *gin.Engine {
 	router.Use(sessions.Sessions(SessionName, sessionStore))
 
 	// Setup routes
+	apis := router.Group("/api")
+	apitodov1.Register(apis, apitodov1.Dependencies{
+		Store: deps.todoStore,
+	})
 
 	return router
 }

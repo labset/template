@@ -1,3 +1,6 @@
 go 1.25.1
 
-use ./platform/backend
+use (
+	./api/go-sdk
+	./platform/backend
+)
