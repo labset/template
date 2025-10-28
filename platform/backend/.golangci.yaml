@@ -54,6 +54,7 @@ linters:
             - github.com/gin-contrib/sessions
             - github.com/gin-gonic/gin
             - github.com/gofrs/uuid/v5
+            - github.com/google/jsonschema-go/jsonschema
             - github.com/joho/godotenv
             - github.com/lib/pq
             - github.com/pressly/goose/v3
