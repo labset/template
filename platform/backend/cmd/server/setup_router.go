@@ -3,6 +3,7 @@ package main
 import (
 	"net/http"
 	"platform/backend/config"
+	apimcpv1 "platform/backend/internal/api/mcp/v1"
 	apitodov1 "platform/backend/internal/api/todo/v1"
 
 	"github.com/gin-contrib/cors"
@@ -51,6 +52,10 @@ func setupRouter(cfg config.Config, deps *dependencies) *gin.Engine {
 	apitodov1.Register(apis, apitodov1.Dependencies{
 		Store: deps.todoStore,
 	})
+
+	// Setup MCP routes
+	mcpGroup := router.Group("/mcp")
+	apimcpv1.Register(mcpGroup, apimcpv1.Dependencies{})
 
 	return router
 }
