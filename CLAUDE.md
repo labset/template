@@ -33,7 +33,7 @@ npm run backend codegen        # Generate Go code (if applicable)
 ### Running Applications
 
 ```bash
-npm run backend start          # Start backend server with hot-reload (uses modd)
+npm run backend start          # Start backend server with hot-reload (uses nodemon)
 npm run backend debug          # Start backend in debug mode
 npm run frontend start         # Start frontend dev server (Vite)
 ```
@@ -94,7 +94,7 @@ npm run backend cli db-schema-rollback  # Rollback last migration
   - `internal/domain/`: Domain logic and business rules
   - `data/`: Database migrations (using Goose) and SQL queries
   - Uses Gin framework with sessions and CORS
-  - Hot-reload with `modd` during development
+  - Hot-reload with `nodemon` during development
 
 - **`platform/frontend/`**: React frontend application
   - `src/pages/`: Page components
@@ -112,7 +112,7 @@ npm run backend cli db-schema-rollback  # Rollback last migration
 - Database: PostgreSQL with lib/pq driver
 - Migrations: Goose (pressly/goose/v3)
 - API Protocol: Connect RPC (gRPC-compatible)
-- Development: modd for hot-reload
+- Development: nodemon for hot-reload
 - Linting: golangci-lint
 
 **Frontend:**
