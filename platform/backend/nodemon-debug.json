@@ -1,0 +1,8 @@
+{
+  "watch": ["**/*.go"],
+  "ext": "go",
+  "ignore": ["vendor/**", "**/*_test.go"],
+  "exec": "dlv debug --listen=:2345 --headless=true --api-version=2 --check-go-version=false --accept-multiclient ./cmd/server",
+  "signal": "SIGTERM",
+  "delay": 1000
+}

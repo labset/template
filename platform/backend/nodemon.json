@@ -1,0 +1,8 @@
+{
+  "watch": ["**/*.go"],
+  "ext": "go",
+  "ignore": ["vendor/**", "**/*_test.go"],
+  "exec": "go run ./cmd/server",
+  "signal": "SIGTERM",
+  "delay": 1000
+}

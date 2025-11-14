@@ -25,6 +25,7 @@
   },
   "devDependencies": {
     "@anthropic-ai/claude-code": "^2.0.26",
+    "nodemon": "^3.1.11",
     "prettier": "^3.6.2",
     "typescript": "^5.9.3"
   }
